@@ -17,6 +17,7 @@ const App = () => {
 
 
   const [input, setInput] = useState('');
+  const [code, setCode] = useState('');
 
   const startService = async () => {
     ref.current = await esbuild.startService({
@@ -81,7 +82,8 @@ const App = () => {
     <div>
       <button onClick={onClick}>Submit</button>
     </div>
-    <iframe title="preview" ref={iframe} sandbox="allow-scripts" srcDoc={html} />
+    <pre>{code}</pre>
+    <iframe title=".." ref={iframe} sandbox="allow-scripts" srcDoc={html} />
 
   </div>
 };

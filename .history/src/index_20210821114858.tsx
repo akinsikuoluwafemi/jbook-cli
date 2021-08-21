@@ -79,7 +79,7 @@ const App = () => {
 
     </textarea>
     <div>
-      <button onClick={onClick}>Submit</button>
+      {/* <button onClick={onClick}>Submit</button> */}
     </div>
     <iframe title="preview" ref={iframe} sandbox="allow-scripts" srcDoc={html} />
 
