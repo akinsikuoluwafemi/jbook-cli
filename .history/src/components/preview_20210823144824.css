@@ -1,0 +1,9 @@
+.iframe-wrapper {
+  position: relative;
+
+}
+
+.iframe-wrapper:after {
+  content: : '';
+  position: absolute;
+}

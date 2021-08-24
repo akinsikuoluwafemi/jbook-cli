@@ -1,0 +1,1 @@
+import {Resi } from 'react-resizable';

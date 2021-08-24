@@ -1,0 +1,1 @@
+import {ResizableBox } from 'react-resizable';
