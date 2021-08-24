@@ -27,16 +27,10 @@ const bundle =  async (rawCode: string) => {
         global: 'window'
       }
       });
-    return {
-        code: result.outputFiles[0].text,
-        err: ''
-    };
+      return result.outputFiles[0].text;
     
   } catch (err) {
-    return {
-        code: '',
-        err: err.message
-    }
+    return err.mess
   }
 
 

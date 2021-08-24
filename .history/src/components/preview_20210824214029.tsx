@@ -59,7 +59,7 @@ const Preview: FC<PreviewProps>  = ({code, err}) => {
     <div className="preview-wrapper">
         <iframe title="preview" ref={iframe} sandbox="allow-scripts" srcDoc={html}/>
 
-      {err && <div className="preview-error">{err}</div>}
+      {err && <div className="preview"></div>}
     </div>
   )
 }

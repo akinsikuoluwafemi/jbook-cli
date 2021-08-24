@@ -22,7 +22,6 @@ const CodeCell = () => {
     const timer = setTimeout( async ()  => {
       const output = await bundle(input);
       setCode(output.code);
-      setErr(output.err);
     }, 1000);
     return () => {
       clearTimeout(timer);
@@ -47,7 +46,7 @@ const CodeCell = () => {
             
             
             
-            <Preview code={code} err={err}  />
+            <Preview code={code}  />
 
           </div>
     </Resizable>

@@ -28,15 +28,11 @@ const bundle =  async (rawCode: string) => {
       }
       });
     return {
-        code: result.outputFiles[0].text,
-        err: ''
-    };
+      
+    }result.outputFiles[0].text;
     
   } catch (err) {
-    return {
-        code: '',
-        err: err.message
-    }
+    return err.message;
   }
 
 

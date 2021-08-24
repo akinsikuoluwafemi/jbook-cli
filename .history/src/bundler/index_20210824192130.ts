@@ -34,9 +34,9 @@ const bundle =  async (rawCode: string) => {
     
   } catch (err) {
     return {
-        code: '',
-        err: err.message
-    }
+      code: result.outputFiles[0].text,
+        err: ''
+  }
   }
 
 

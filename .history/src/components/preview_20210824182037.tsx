@@ -4,8 +4,7 @@ import { FC, useRef, useEffect } from 'react';
 
 
 interface PreviewProps {
-  code: string,
-  err: string
+  code: string
 }
 
 const html = `
@@ -18,14 +17,9 @@ const html = `
       <script>
       const handleError = (err) => {
          const root = document.querySelector('#root');
-          root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + err + '</div>'
-          console.error(err);
+            root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + err + '</div>'
+            console.error(err);
       };
-
-      window.addEventListener('error', (event) => {
-          event.preventDefault();
-          handleError(event.error)
-      });
 
 
 
@@ -33,7 +27,7 @@ const html = `
           try {
             eval(event.data);
           } catch (err){
-            handleError(err)
+           
           }
         }, false)
       </script>
@@ -42,7 +36,7 @@ const html = `
   `
 
 
-const Preview: FC<PreviewProps>  = ({code, err}) => {
+const Preview: FC<PreviewProps>  = ({code}) => {
   const iframe = useRef<any>(null);
 
   useEffect(() => {
@@ -54,12 +48,10 @@ const Preview: FC<PreviewProps>  = ({code, err}) => {
    
   }, [code])
  
-
   return (
     <div className="preview-wrapper">
-        <iframe title="preview" ref={iframe} sandbox="allow-scripts" srcDoc={html}/>
+        <iframe   title="preview" ref={iframe} sandbox="allow-scripts" srcDoc={html}/>
 
-      {err && <div className="preview-error">{err}</div>}
     </div>
   )
 }

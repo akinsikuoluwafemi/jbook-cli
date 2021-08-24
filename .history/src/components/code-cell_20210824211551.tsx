@@ -47,7 +47,7 @@ const CodeCell = () => {
             
             
             
-            <Preview code={code} err={err}  />
+            <Preview code={code} bundlingStatus={err}  />
 
           </div>
     </Resizable>

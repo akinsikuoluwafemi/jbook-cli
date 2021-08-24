@@ -15,22 +15,20 @@ const CodeCell = () => {
 
 
   const [code, setCode] = useState('');
-  const [err, setErr] = useState('');
   const [input, setInput] = useState('');
 
   useEffect(() => {
-    const timer = setTimeout( async ()  => {
-      const output = await bundle(input);
-      setCode(output.code);
-      setErr(output.err);
-    }, 1000);
-    return () => {
-      clearTimeout(timer);
-    }
+    setTimeout(() =)
   },[input])
   
 
- 
+  const onClick = async () => {
+    
+    const output = await bundle(input);
+    setCode(output);
+
+    
+  };
 
   
   
@@ -39,15 +37,13 @@ const CodeCell = () => {
         <div style={{height: '100%', display: 'flex', flexDirection: 'row'}}>
             <Resizable direction="horizontal">
               <CodeEditor initialValue="const a = 1"
-            onChange={(value) => {
-              setInput(value)
-                }}
+                onChange={(value) => setInput(value)}
             />
             </Resizable>
             
             
             
-            <Preview code={code} err={err}  />
+            <Preview code={code}  />
 
           </div>
     </Resizable>

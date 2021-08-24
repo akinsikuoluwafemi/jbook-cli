@@ -5,12 +5,7 @@
 
 }
 
-.preview-error {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: red;
-}
+.
 
 .preview-wrapper iframe{
   height: 100%;
