@@ -2,7 +2,7 @@ import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import './components/code-editor.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import CodeCell from './components/code-cell';
+import CodeCell from './components/code-cell';
 import TextEditor from './components/text-editor';
 
 
@@ -11,8 +11,7 @@ const App = () => {
   
   return (
      <div>
-      {/* <CodeCell /> */}
-      <TextEditor/>
+      <CodeCell />
       
     </div>
   )
