@@ -28,12 +28,12 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
       const { id, content } = action.payload;
 
       state.data[id].content = content;
-      return state;
+      break;
     case ActionType.DELETE_CELL:
       delete state.data[action.payload];
       state.order.filter(id => id !== action.payload);
 
-      return state;
+      break;
     case ActionType.MOVE_CELL:
       const { direction } = action.payload;
       // first find the index of the cell you want to move

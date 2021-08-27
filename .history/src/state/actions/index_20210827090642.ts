@@ -14,7 +14,7 @@ export interface MoveCellAction {
 
 export interface DeleteCellAction {
   type: ActionType.DELETE_CELL;
-  payload: string | any; //come back and fix the immer error in typecript so you can remove the any;
+  payload: string;
 }
 
 export interface InsertCellBeforeAction {
@@ -28,12 +28,12 @@ export interface InsertCellBeforeAction {
 export interface UpdateCellAction {
   type: ActionType.UPDATE_CELL;
   payload: {
-    id: string | any; //come back and fix the immer error in typecript so you can remove the any
+    id: string | any; //remove the any
     content: string;
   }
 }
 
-export type Action =
+// export type Action =
     MoveCellAction
   | DeleteCellAction
   | InsertCellBeforeAction

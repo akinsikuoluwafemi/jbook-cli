@@ -58,9 +58,9 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
       };
 
       state.data[cell.id] = cell;
+      
 
       const foundIndex = state.order.findIndex(id => id === action.payload.id);
-      
       if (foundIndex < 0) {
         state.order.push(cell.id);
       } else {

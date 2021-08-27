@@ -14,7 +14,7 @@ export interface MoveCellAction {
 
 export interface DeleteCellAction {
   type: ActionType.DELETE_CELL;
-  payload: string | any; //come back and fix the immer error in typecript so you can remove the any;
+  payload: string;
 }
 
 export interface InsertCellBeforeAction {

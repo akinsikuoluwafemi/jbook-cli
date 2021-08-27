@@ -28,12 +28,12 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
       const { id, content } = action.payload;
 
       state.data[id].content = content;
-      return state;
+      break;
     case ActionType.DELETE_CELL:
       delete state.data[action.payload];
       state.order.filter(id => id !== action.payload);
 
-      return state;
+      break;
     case ActionType.MOVE_CELL:
       const { direction } = action.payload;
       // first find the index of the cell you want to move
@@ -42,13 +42,13 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
       const targetIndex = direction === 'up' ? index - 1 : index + 1;
       // if the index found is the first item or last item, don't do anything
       if (targetIndex < 0 || targetIndex > state.order.length - 1) {
-        return state;
+        break;
       }
       // using immer: move the cell where you want to
       state.order[index] = state.order[targetIndex];
       state.order[targetIndex] = action.payload.id;
 
-      return state;
+      break;
     case ActionType.INSERT_CELL_BEFORE:
       // create a new cell
       const cell: Cell = {
